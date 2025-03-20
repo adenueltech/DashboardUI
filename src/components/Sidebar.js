@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -34,28 +35,36 @@ const Sidebar = () => {
       >
         Main
       </h2>
+
       <nav>
         <ul className="space-y-4">
           <li className="flex items-center space-x-2 text-blue-400 animate-pulse">
             <i className="fas fa-chart-bar"></i>
-            <span className={`${isOpen ? "block" : "hidden"}`}>Dashboard</span>
+            <Link to="/dashboard" className={`${isOpen ? "block" : "hidden"}`}>
+              Dashboard
+            </Link>
           </li>
-          <li className="flex items-center space-x-2 hover:text-blue-400 transition duration-300 cursor-pointer">
+          <li className="flex items-center space-x-2 hover:text-blue-400 transition duration-300">
             <i className="fas fa-users"></i>
-            <span className={`${isOpen ? "block" : "hidden"}`}>Users</span>
+            <Link to="/users" className={`${isOpen ? "block" : "hidden"}`}>
+              Users
+            </Link>
           </li>
-          <li className="flex items-center space-x-2 hover:text-blue-400 transition duration-300 cursor-pointer">
+          <li className="flex items-center space-x-2 hover:text-blue-400 transition duration-300">
             <i className="fas fa-box"></i>
-            <span className={`${isOpen ? "block" : "hidden"}`}>Products</span>
+            <Link to="/products" className={`${isOpen ? "block" : "hidden"}`}>
+              Products
+            </Link>
           </li>
-          <li className="flex items-center space-x-2 hover:text-blue-400 transition duration-300 cursor-pointer">
+          <li className="flex items-center space-x-2 hover:text-blue-400 transition duration-300">
             <i className="fas fa-shopping-cart"></i>
-            <span className={`${isOpen ? "block" : "hidden"}`}>Orders</span>
+            <Link to="/orders" className={`${isOpen ? "block" : "hidden"}`}>
+              Orders
+            </Link>
           </li>
         </ul>
       </nav>
 
-      {/* Divider */}
       <hr className="my-4 border-gray-700" />
 
       {/* REPORTS Section */}
@@ -67,17 +76,20 @@ const Sidebar = () => {
         Reports
       </h2>
       <ul className="space-y-4">
-        <li className="flex items-center space-x-2 hover:text-blue-400 transition duration-300 cursor-pointer">
+        <li className="flex items-center space-x-2 hover:text-blue-400 transition duration-300">
           <i className="fas fa-chart-line animate-fade"></i>
-          <span className={`${isOpen ? "block" : "hidden"}`}>Analytics</span>
+          <Link to="/analytics" className={`${isOpen ? "block" : "hidden"}`}>
+            Analytics
+          </Link>
         </li>
-        <li className="flex items-center space-x-2 hover:text-blue-400 transition duration-300 cursor-pointer">
+        <li className="flex items-center space-x-2 hover:text-blue-400 transition duration-300">
           <i className="fas fa-dollar-sign animate-bounce"></i>
-          <span className={`${isOpen ? "block" : "hidden"}`}>Sales</span>
+          <Link to="/sales" className={`${isOpen ? "block" : "hidden"}`}>
+            Sales
+          </Link>
         </li>
       </ul>
 
-      {/* Divider */}
       <hr className="my-4 border-gray-700" />
 
       {/* ADMIN Section */}
@@ -89,17 +101,23 @@ const Sidebar = () => {
         Admin
       </h2>
       <ul className="space-y-4">
-        <li className="flex items-center space-x-2 hover:text-blue-400 transition duration-300 cursor-pointer">
+        <li className="flex items-center space-x-2 hover:text-blue-400 transition duration-300">
           <i className="fas fa-cog animate-spin"></i>
-          <span className={`${isOpen ? "block" : "hidden"}`}>Settings</span>
+          <Link to="/settings" className={`${isOpen ? "block" : "hidden"}`}>
+            Settings
+          </Link>
         </li>
-        <li className="flex items-center space-x-2 hover:text-blue-400 transition duration-300 cursor-pointer">
+        <li className="flex items-center space-x-2 hover:text-blue-400 transition duration-300">
           <i className="fas fa-bell animate-shake"></i>
-          <span className={`${isOpen ? "block" : "hidden"}`}>Notifications</span>
+          <Link to="/notifications" className={`${isOpen ? "block" : "hidden"}`}>
+            Notifications
+          </Link>
         </li>
-        <li className="flex items-center space-x-2 hover:text-blue-400 transition duration-300 cursor-pointer">
+        <li className="flex items-center space-x-2 hover:text-blue-400 transition duration-300">
           <i className="fas fa-shield-alt animate-pulse"></i>
-          <span className={`${isOpen ? "block" : "hidden"}`}>Security</span>
+          <Link to="/security" className={`${isOpen ? "block" : "hidden"}`}>
+            Security
+          </Link>
         </li>
       </ul>
     </aside>
@@ -107,4 +125,5 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
 
