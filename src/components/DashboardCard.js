@@ -12,6 +12,7 @@ const DashboardCard = ({ title, value, iconClass, color, growth }) => {
     </div>
   );
 };
+
  
 export default DashboardCard;
   
