@@ -1,0 +1,6 @@
+:root {
+    --theme: light;
+  }
+  .dark {
+    --theme: dark;
+  }

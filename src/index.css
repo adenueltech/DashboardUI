@@ -2,3 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 @import '@fortawesome/fontawesome-free/css/all.min.css';
+@keyframes border-glow {
+    0% {
+      box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+    }
+  }
+  
+  .animate-border-glow {
+    animation: border-glow 1.5s infinite alternate;
+  }
+
+
+
+  :root {
+    --theme: light;
+  }
+  .dark {
+    --theme: dark;
+  }

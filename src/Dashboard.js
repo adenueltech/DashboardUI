@@ -2,35 +2,38 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import DashboardCard from "./components/DashboardCard";
 import RecentOrder from "./components/RecentOrder";
+import { useTheme } from "./components/ThemeProvider"; // Import Theme Context
 
 const Dashboard = () => {
+  const { theme } = useTheme(); // Get current theme
+
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className={`${theme === "dark" ? "dark" : ""} flex flex-col lg:flex-row`}>
       {/* Sidebar */}
       <Sidebar />
 
       {/* Main Content */}
-      <main className="flex-1 bg-gray-100 p-6">
+      <main className={`flex-1 p-6 transition-all duration-300 ${theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-gray-800"}`}>
         <Header />
 
         {/* Dashboard Title & Actions */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 space-y-4 md:space-y-0">
-          {/* DASHBOARD Title with Purple Underline */}
+        <div className="flex flex-col md:flex-row mt-[70px] justify-between items-start md:items-center mb-6 space-y-4 md:space-y-0">
+          {/* DASHBOARD Title */}
           <div>
-            <h2 className="text-2xl font-bold text-gray-800">DASHBOARD</h2>
+            <h2 className="text-2xl font-bold">DASHBOARD</h2>
             <div className="w-20 h-1 bg-purple-800 mt-1"></div>
           </div>
 
           {/* Buttons */}
-          <div className="flex space-x-3">
+          <div className="flex mt-[10px] space-x-3" style={{marginTop:'10px'}}>
             {/* Export Button */}
-            <button className="flex items-center space-x-2 px-4 py-2 border border-purple-800 text-purple-800 rounded-md hover:bg-purple-800 hover:text-white transition transform hover:scale-105">
+            <button className="flex items-center space-x-2 px-4 py-2 border border-orange-300 text-purple-800 dark:text-purple-300 dark:border-purple-500 rounded-md hover:bg-blue-500 hover:text-white transition transform hover:scale-105">
               <i className="fas fa-download"></i>
               <span>Export</span>
             </button>
 
             {/* + Add Here Button */}
-            <button className="flex items-center space-x-2 px-4 py-2 bg-purple-800 text-white rounded-md hover:bg-purple-900 transition transform hover:scale-105">
+            <button className="flex items-center space-x-2 px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-purple-900 transition transform hover:scale-105">
               <i className="fas fa-plus"></i>
               <span>Add Here</span>
             </button>
